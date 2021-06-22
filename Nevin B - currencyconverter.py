@@ -1,5 +1,5 @@
 #Making a list of Currencies
-currency_type = ["INR", "USD", "CAD", "CNY", "DKK", "EUR"]
+currency_type = ["INR", "USD", "CAD", "CNY", "DKK", "EUR", "MXN", "GBP"]
 
 #Importing tkinter
 import tkinter
@@ -7,6 +7,9 @@ from tkinter import *
 from tkinter import messagebox
 root=Tk()
 root.title("Nevin - Currency Conversion")
+
+#Dimensions of the Converter
+root.geometry("900x720")
 
 #Defining my variables
 variable1 = StringVar(root)
@@ -32,7 +35,7 @@ def realtimecurrencyconversion():
 
     else:
         new_amt = c.convert(from_cur, to_cur, float(amount1_field.get()))
-        amount2_field.insert(INSERT, str(new_amt))
+        amount2_field.insert(INSERT, str(round(float(new_amt), 2)))
 
 def clearall():
     amount1_field.delete(0, tkinter.END)
