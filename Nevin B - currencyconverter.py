@@ -1,13 +1,12 @@
 #Making a list of Currencies
-import tkinter
-
 currency_type = ["INR", "USD", "CAD", "CNY", "DKK", "EUR"]
 
+#Importing tkinter
+import tkinter
 from tkinter import *
 from tkinter import messagebox
 root=Tk()
 root.title("Nevin - Currency Conversion")
- ##Dimensions of the Converter
 
 #Defining my variables
 variable1 = StringVar(root)
