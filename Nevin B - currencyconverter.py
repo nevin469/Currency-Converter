@@ -1,8 +1,8 @@
 #Making a list of Currencies
+import tkinter
+
 currency_type = ["INR", "USD", "CAD", "CNY", "DKK", "EUR", "MXN", "GBP"]
 
-#Importing tkinter
-import tkinter
 from tkinter import *
 from tkinter import messagebox
 root=Tk()
@@ -14,6 +14,9 @@ root.geometry("900x720")
 #Defining my variables
 variable1 = StringVar(root)
 variable2 = StringVar(root)
+
+variable1.set("Currency")
+variable2.set("Currency")
 
 #Pop up Title
 headlabel = Label(font=("Helvetica", 20), text = '  Pypower Project   :    Currency Converter  ', bg= '#663300',fg='white')
@@ -41,6 +44,7 @@ def clearall():
     amount1_field.delete(0, tkinter.END)
     amount2_field.delete(0, tkinter.END)
 
+
 #Setting up my labels
 
 Label_1 = Label(root, font=("Helvetica", 20), text="",padx=2,pady=2, bg="White",fg ="black")
@@ -55,7 +59,7 @@ label1.grid(row=3, column=0, sticky=W)
 label1 = Label(root,font=("Helvetica", 20), text = "\tTo Currency:  ", bg="White",fg = "black")
 label1.grid(row=4, column=0, sticky=W)
 
-label1 = Label(root,font=("Helvetica", 20), text = "\tConverted Amount:  ", bg="White",fg = "black")
+label1 = Label(root,font=("Helvetica", 17), text = "\tConverted Amount:  ", bg="White",fg = "black")
 label1.grid(row=8, column=0, sticky=W)
 
 Label_1 =Label(root, font=("Helvetica", 20), text="",padx=2,pady=2, bg="White",fg ="black")
@@ -85,7 +89,7 @@ amount1_field = Entry(root)
 amount1_field.grid(row=2,column=0,ipadx =20,sticky=E)
 
 amount2_field = Entry(root)
-amount2_field.grid(row=8,column=0,ipadx =31,sticky=E)
+amount2_field.grid(row=8,column=0,ipadx =25,sticky=E)
 
 
 root.mainloop()
