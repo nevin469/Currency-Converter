@@ -1,7 +1,10 @@
 #Making a list of Currencies
 import tkinter
 
-currency_type = ["INR", "USD", "CAD", "CNY", "DKK", "EUR", "MXN", "GBP"]
+other_currency = input("Choose a currency type: ")
+other_currency2 = input("Enter a second currency type: ")
+
+currency_type = [other_currency, other_currency2]
 
 from tkinter import *
 from tkinter import messagebox
@@ -22,6 +25,11 @@ variable2.set("Currency")
 headlabel = Label(font=("Helvetica", 20), text = '  Pypower Project   :    Currency Converter  ', bg= '#663300',fg='white')
 headlabel.grid(row=1, column=0,sticky=W)
 
+#Input pop up
+messagebox.showinfo("Nevin B", "Currency chosen")
+
+
+
 #Currency exchange code
 def realtimecurrencyconversion():
     from forex_python.converter import CurrencyRates
@@ -34,7 +42,7 @@ def realtimecurrencyconversion():
         messagebox.showerror("ERROR!", "Please enter an amount")
 
     elif from_cur=="Currency" or to_cur =="Currency":
-        messagebox.showerror("ERROR!", "Please selet your currencies")
+        messagebox.showerror("ERROR!", "Please select your currencies")
 
     else:
         new_amt = c.convert(from_cur, to_cur, float(amount1_field.get()))
