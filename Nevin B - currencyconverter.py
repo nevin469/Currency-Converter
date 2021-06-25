@@ -1,10 +1,6 @@
 #Making a list of Currencies
 import tkinter
 
-other_currency = input("Choose a currency type: ")
-other_currency2 = input("Enter a second currency type: ")
-
-currency_type = [other_currency, other_currency2]
 
 from tkinter import *
 from tkinter import messagebox
@@ -18,8 +14,6 @@ root.geometry("900x720")
 variable1 = StringVar(root)
 variable2 = StringVar(root)
 
-variable1.set("Currency")
-variable2.set("Currency")
 
 #Pop up Title
 headlabel = Label(font=("Helvetica", 20), text = '  Pypower Project   :    Currency Converter  ', bg= '#663300',fg='white')
@@ -29,23 +23,26 @@ headlabel.grid(row=1, column=0,sticky=W)
 messagebox.showinfo("Nevin B", "Currency chosen")
 
 
+#Setting up my currency to currency buttons
+from_cur = Entry(root)
+to_cur = Entry(root)
 
 #Currency exchange code
 def realtimecurrencyconversion():
     from forex_python.converter import CurrencyRates
     c = CurrencyRates()
 
-    from_cur = variable1.get()
-    to_cur = variable2.get()
+    cur1 = from_cur.get()
+    cur2 = to_cur.get()
 
     if amount1_field.get() == "":
         messagebox.showerror("ERROR!", "Please enter an amount")
 
-    elif from_cur=="Currency" or to_cur =="Currency":
+    elif cur1=="" or cur2 =="":
         messagebox.showerror("ERROR!", "Please select your currencies")
 
     else:
-        new_amt = c.convert(from_cur, to_cur, float(amount1_field.get()))
+        new_amt = c.convert(cur1, cur2, float(amount1_field.get()))
         amount2_field.insert(INSERT, str(round(float(new_amt), 2)))
 
 def clearall():
@@ -86,8 +83,11 @@ Label_9 =Button(root, font=("Helvetica", 20), text=" Clear All  ",padx=2,pady=2,
 Label_9.grid(row=10, column=0)
 
 #Setting up my currency to currency buttons
-from_cur = OptionMenu(root, variable1, *currency_type)
-to_cur = OptionMenu(root, variable2, *currency_type)
+from_cur = Entry(root)
+to_cur = Entry(root)
+
+currency_type = [from_cur, to_cur]
+
 
 from_cur.grid(row = 3, column = 0, ipadx = 45,sticky=E)
 to_cur.grid(row = 4, column = 0, ipadx = 45,sticky=E)
