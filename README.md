@@ -1,2 +1,2 @@
 # Currency-Converter
-A currency converting machine that can convert 10 currencies using python and pythonGUI
+A currency converting machine that can convert from many currencies based on your input, using python and pythonGUI
