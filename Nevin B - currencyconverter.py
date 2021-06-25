@@ -19,10 +19,6 @@ variable2 = StringVar(root)
 headlabel = Label(font=("Helvetica", 20), text = '  Pypower Project   :    Currency Converter  ', bg= '#663300',fg='white')
 headlabel.grid(row=1, column=0,sticky=W)
 
-#Input pop up
-messagebox.showinfo("Nevin B", "Currency chosen")
-
-
 #Setting up my currency to currency buttons
 from_cur = Entry(root)
 to_cur = Entry(root)
@@ -85,8 +81,6 @@ Label_9.grid(row=10, column=0)
 #Setting up my currency to currency buttons
 from_cur = Entry(root)
 to_cur = Entry(root)
-
-currency_type = [from_cur, to_cur]
 
 
 from_cur.grid(row = 3, column = 0, ipadx = 45,sticky=E)
