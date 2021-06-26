@@ -16,7 +16,7 @@ variable2 = StringVar(root)
 
 
 #Pop up Title
-headlabel = Label(font=("Helvetica", 20), text = '  Pypower Project   :    Currency Converter  ', bg= '#663300',fg='white')
+headlabel = Label(font=("Helvetica", 20), text = '       Currency         Converting       Machine  ', bg= '#663300',fg='white')
 headlabel.grid(row=1, column=0,sticky=W)
 
 #Setting up my currency to currency buttons
