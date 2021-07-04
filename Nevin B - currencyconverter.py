@@ -20,8 +20,8 @@ headlabel = Label(font=("Helvetica", 20), text = '       Currency         Conver
 headlabel.grid(row=1, column=0,sticky=W)
 
 #Setting up my currency to currency buttons
-from_cur = Entry(root)
-to_cur = Entry(root)
+from_cur = Entry(root, text = "Currency")
+to_cur = Entry(root, text = "Currency")
 
 #Currency exchange code
 def realtimecurrencyconversion():
@@ -44,6 +44,8 @@ def realtimecurrencyconversion():
 def clearall():
     amount1_field.delete(0, tkinter.END)
     amount2_field.delete(0, tkinter.END)
+    from_cur.delete(0, tkinter.END)
+    to_cur.delete(0, tkinter.END)
 
 
 #Setting up my labels
